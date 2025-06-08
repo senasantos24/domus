@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <img src="domus-site/imagens/domuslogo.jpg">
   <title>DOMUS</title>
+  <link rel="icon" href="img/domuslogo1.png" type="image/png">
   <style>
     * {
       margin: 0;
@@ -59,9 +59,9 @@
       color: #ccc;
     }
     .section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+  padding: 60px 40px;
+  max-width: 100%;
+  margin: auto;
     }
     .section h2 {
       margin-bottom: 20px;
@@ -70,17 +70,33 @@
       padding-left: 10px;
     }
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
     .card {
-      background: #1e1e1e;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
     .card:hover {
       transform: scale(1.05);
     }
@@ -120,18 +136,22 @@
     <h2>Serviços</h2>
     <div class="grid">
       <div class="card">
+        <img src="img/ilum-domus.png" alt="Iluminação Inteligente" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
         <h3>Iluminação Inteligente</h3>
         <p>Controle por app ou voz, com cenas automáticas e economia.</p>
       </div>
       <div class="card">
+        <img src="img/clim-domus.png" alt="Segurança" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
         <h3>Climatização</h3>
         <p>Ambientes sempre na temperatura ideal, com sensores inteligentes.</p>
       </div>
       <div class="card">
+        <img src="img/segu-domus.jpg" alt="Segurança" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
         <h3>Segurança</h3>
         <p>Câmeras, fechaduras digitais e sensores controlados remotamente.</p>
       </div>
       <div class="card">
+        <img src="img/ener-domus.jpg" alt="Segurança" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
         <h3>Energia Sustentável</h3>
         <p>Soluções com painéis solares e monitoramento em tempo real.</p>
       </div>
@@ -152,10 +172,17 @@
     </div>
   </section>
 
-  <section id="orcamento" class="section">
-    <h2>Faça seu Orçamento</h2>
-    <p>Entre em contato para uma consultoria gratuita e receba um plano personalizado para sua residência.</p>
-  </section>
+ <section id="orcamento" class="section">
+  <h2>Faça seu Orçamento</h2>
+  <p>Preencha o formulário abaixo para receber uma proposta personalizada:</p>
+  <form style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+    <input type="text" placeholder="Seu nome" required style="padding: 10px; border-radius: 6px; border: none;">
+    <input type="email" placeholder="Seu e-mail" required style="padding: 10px; border-radius: 6px; border: none;">
+    <input type="tel" placeholder="Telefone para contato" style="padding: 10px; border-radius: 6px; border: none;">
+    <textarea placeholder="Descreva seu projeto" rows="4" style="padding: 10px; border-radius: 6px; border: none;"></textarea>
+    <button type="submit" style="padding: 12px; background: linear-gradient(90deg, #fb37ff, #3f78ff); color: white; border: none; border-radius: 6px; cursor: pointer;">Enviar</button>
+  </form>
+</section>
 
   <section id="trabalhe" class="section">
     <h2>Trabalhe Conosco</h2>
@@ -168,7 +195,14 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 DOMUS Todos os direitos reservados. | Criado por Maria Clara Sena Santos, Felipe Allan Garcia — Profº: Israel Ribeiro</p>
+    <p>&copy; 2025 DOMUS Todos os direitos reservados. | Criado por Maria Clara Sena Santos, Felipe Allan Garcia — Profº: Israel Ribeiro </p>
+  <div style="margin-top: 10px;">
+  <a href="https://www.instagram.com/seuusuario" target="_blank" style="color: #ccc; text-decoration: none;">
+    <img src="img/instagram-icon.png" alt="Instagram" style="width: 20px; vertical-align: middle; margin-right: 6px;">
+    @domusautomacao
+  </a>
+</div>
+
   </footer>
 
   <script>
